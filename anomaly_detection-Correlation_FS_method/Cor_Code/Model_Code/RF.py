@@ -20,8 +20,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 from sklearn.preprocessing import MinMaxScaler as MS
 
-scaler1 = MS()
-scaler2 = MS()
+scaler = MS()
 
 # In[2]:
 
@@ -79,9 +78,9 @@ for x in range(start, end):
         x_test = pd.read_csv(f'../Dataset/Used/{Dataset}_xtest_{FEATURES}_{TYPE}.csv')
         y_test = pd.read_csv(f'../Dataset/Used/{Dataset}_ytest_{FEATURES}_{TYPE}.csv')
         
-        X_train = scaler1.fit_transform(x_train)
+        X_train = scaler.fit_transform(x_train)
         #X_test = scaler2.fit_transform(x_test)
-        X_test = scaler1.fit_transform(x_test)
+        X_test = scaler.transform(x_test)
         # In[]
         
         y_train_multi = np.ravel(y_train)
