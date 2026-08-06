@@ -23,8 +23,7 @@ sys.path.append("..")
 # from keras_visualizer import visualizer
 # from ann_visualizer.visualize import ann_viz
 
-scaler1 = MinMaxScaler()
-scaler2 = MinMaxScaler()
+scaler = MinMaxScaler()
 
 # My Model
 
@@ -98,8 +97,8 @@ for x in range(start, end):
                                                                                             # v1 + v2: 69.81     #100 -- 88.37 75.52  
                                                                                             # v1 + v1: 76.26 
                                                                                             
-        x_train = scaler1.fit_transform(x_train)                                            # v4 + cor: 69.40 61.82
-        x_test = scaler2.fit_transform(x_test)                                              # v4 + v3: 83 77
+        x_train = scaler.fit_transform(x_train)                                            # v4 + cor: 69.40 61.82
+        x_test = scaler.transform(x_test)                                              # v4 + v3: 83 77
                                                                                             # v4 + v2: ----
                                                                                       # cor + v2: 76.94 73.5 #200 -- 79.29 76.85                                                                                    # cor + v3: 48
         print("\nTrain shape: ", x_train.shape)
