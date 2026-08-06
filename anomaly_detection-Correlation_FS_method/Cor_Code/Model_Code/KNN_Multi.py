@@ -15,8 +15,7 @@ import sys
 sys.path.append("..")
 from sklearn.preprocessing import MinMaxScaler
 
-scaler1 = MinMaxScaler()
-scaler2 = MinMaxScaler()
+scaler = MinMaxScaler()
 
 # In[2]:
     
@@ -76,8 +75,8 @@ for x in range(start, end):
         x_test = pd.read_csv(f'../Dataset/Used/{Dataset}_xtest_{FEATURES}_{TYPE}.csv')
         y_test = pd.read_csv(f'../Dataset/Used/{Dataset}_ytest_{FEATURES}_{TYPE}.csv')
         
-        x_train = scaler1.fit_transform(x_train)
-        x_test = scaler2.fit_transform(x_test)
+        x_train = scaler.fit_transform(x_train)
+        x_test = scaler.transform(x_test)
         
        
         
