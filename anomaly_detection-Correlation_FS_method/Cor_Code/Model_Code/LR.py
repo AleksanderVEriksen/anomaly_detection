@@ -10,8 +10,7 @@ from sklearn.linear_model import LogisticRegression
 
 from sklearn.preprocessing import MinMaxScaler
 
-scaler1 = MinMaxScaler()
-scaler2 = MinMaxScaler()
+scaler = MinMaxScaler()
 
 import sys
 sys.path.append("..")
@@ -80,9 +79,10 @@ for x in range(start, end):
         y_test = pd.read_csv(f'../Dataset/Used/{Dataset}_ytest_{FEATURES}_{TYPE}.csv')
           
         x_test.shape
-        x_train.shape        
-        #X_train = scaler1.fit_transform(x_train)
-        #X_test = scaler2.fit_transform(x_test)
+        x_train.shape
+      
+        #X_train = scaler.fit_transform(x_train)
+        #X_test = scaler.transform(x_test)
         # In[36]:
         
         # 300, 500, l2, lbfgs
